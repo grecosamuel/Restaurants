@@ -4,11 +4,29 @@ body {
 
 
 #neighborhoods {
+    font-size: 18px;
     width: 15%;
     background-color: #D6E640;
     height: 100vh;
     border-radius: 0  5px 5px 0;
     visibility: visible;
+    padding: 5px;
+}
+
+#neighborhoods > ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#neighborhoods > ul > li {
+    color: #fff;
+    margin: 5px;
+}
+
+#neighborhoods > ul > li:hover {
+    color: rgb(84, 113, 241);
 }
 
 #restaurants-list {
@@ -28,6 +46,7 @@ body {
         visibility: visible;
     }
     #neighborhoods {
+        font-size: 16px;
         visibility: hidden;
         position: absolute;
         width: 60%;
