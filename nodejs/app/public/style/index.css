@@ -1,0 +1,42 @@
+body {
+    padding-top: 10vh;
+}
+
+
+#neighborhoods {
+    width: 15%;
+    background-color: #D6E640;
+    height: 100vh;
+    border-radius: 0  5px 5px 0;
+    visibility: visible;
+}
+
+#restaurants-list {
+    width: 85%;
+    position: relative;
+}
+
+#btn-menu {
+    visibility: hidden;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+    #btn-menu {
+        visibility: visible;
+    }
+    #neighborhoods {
+        visibility: hidden;
+        position: absolute;
+        width: 60%;
+        z-index: 999;
+    }
+
+    #restaurants-list {
+        width: 100%;
+        position: absolute;
+    }
+
+}
