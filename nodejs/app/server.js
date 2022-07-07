@@ -3,6 +3,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const { MongoClient } = require("mongodb");
 const path = require("path");
+const bodyParser = require("body-parser");
 
 // Load .env config
 dotenv.config();
@@ -25,6 +26,8 @@ let db = mongoInit();
 const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, "views"));
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(express.static("public"))
 
 app.get("/", async (req, res) => {
     let data = await db.collection("restaurants").find().limit(10).toArray();
