@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <%- include('./partials/head'); %>
+    </head>
+
+    <style>
+        body {
+            padding-top: 10vh;
+        }
+    </style>
+
+    <body>
+
+        <%- include('./partials/navbar'); %>
+        
+        <div class="container-fluid">
+            <% restaurants.forEach(function(item){%>
+                <p> <%= item.name %></p>
+            <%  }); %>
+        </div>
+
+
+    <%- include('./partials/bootstrapjs'); %>
+    </body>
+</html>
