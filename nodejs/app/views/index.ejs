@@ -1,25 +1,47 @@
 <html>
     <head>
         <%- include('./partials/head'); %>
+        <link rel="stylesheet" type="text/css" href="/style/index.css">
     </head>
-
-    <style>
-        body {
-            padding-top: 10vh;
-        }
-    </style>
 
     <body>
 
         <%- include('./partials/navbar'); %>
         
-        <div class="container-fluid">
-            <% restaurants.forEach(function(item){%>
-                <p> <%= item.name %></p>
-            <%  }); %>
+        <div class="container-fluid" style="padding: 0">
+            <div class="d-flex">
+                <div id="neighborhoods">
+                    a
+                </div>
+
+                <div id="restaurants-list">
+                    b
+                </div>
+            </div>
         </div>
 
 
     <%- include('./partials/bootstrapjs'); %>
     </body>
+
+    <script>
+
+        let btnMenuHandler = document.getElementById("btn-menu");
+        btnMenuHandler.addEventListener("click", (e) => {
+            e.preventDefault();
+            let neigh = document.getElementById("neighborhoods");
+            let restaurantsList = document.getElementById("restaurants-list");
+            
+            if (neigh.style.visibility === "hidden"){
+                neigh.style.visibility = "visible";
+                restaurantsList.style.position = "relative";
+            }
+            else {
+                neigh.style.visibility = "hidden";
+                restaurantsList.style.position = "absolute";
+            }
+
+
+        })
+    </script>
 </html>
