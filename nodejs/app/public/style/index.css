@@ -7,7 +7,7 @@ body {
     font-size: 18px;
     width: 15%;
     background-color: #D6E640;
-    height: 100vh;
+    min-height: 100%;
     border-radius: 0  5px 5px 0;
     visibility: visible;
     padding: 5px;
@@ -32,6 +32,7 @@ body {
 #restaurants-list {
     width: 85%;
     position: relative;
+    overflow: scroll;
 }
 
 #btn-menu {

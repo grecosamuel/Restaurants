@@ -19,8 +19,22 @@
                     </ul>
                 </div>
 
-                <div id="restaurants-list">
-                    b
+                <div id="restaurants-list" class="d-flex justify-content-center flex-wrap">
+
+                    <% restaurants.forEach( (r) => { %>
+                        <div class="card m-5" style="width: 18rem;">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title"><%= r.name %></h5>
+                              <p class="card-text"><%= r.borough %> - <%= r.cuisine %></p>
+                              <a href="#" class="btn btn-primary">View details</a>
+                            </div>
+                          </div>
+                    <% }); %>
+
+
+
+
                 </div>
             </div>
         </div>
