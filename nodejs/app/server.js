@@ -32,15 +32,24 @@ app.set('views', path.join(__dirname, "views"));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static("public"))
 
-app.get("/", async (req, res) => {
-   let neigh = await db.collection("neighborhoods").find().toArray();
+async function getRestaurants(req, res, next){
+    let restaurants = await db.collection("restaurants").find().limit(5).toArray();
+    let neigh = await db.collection("neighborhoods").find().toArray();
+    res.locals.restaurants = restaurants;
+    res.locals.neigh = neigh;
+    next();
+}
+
+app.get("/page/:n", getRestaurants, async (req, res) => {
+   let { n } = req.params;
+   n = Number(n);
+
    
-    let restaurants = await db.collection("restaurants").find().limit(10).toArray();
 
     res.render("index2", {
         pageTitle: "Demo",
-        neighborhoods: neigh,
-        restaurants: restaurants
+        neighborhoods: res.locals.neigh,
+        restaurants: res.locals.restaurants
     })
 });
 
