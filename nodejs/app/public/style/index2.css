@@ -1,4 +1,6 @@
-
+body {
+    overflow-x: hidden;
+}
 #btnMenu {
     background-image: url("/media/hamburger.png");
     background-size: cover;
@@ -16,4 +18,9 @@
 
 #neighborhoodsMenu .list-group-item:last-child {
     border-bottom-left-radius: unset !important;
+}
+
+
+.home-content {
+    margin-top: 7.5rem;
 }
