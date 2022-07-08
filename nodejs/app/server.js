@@ -30,13 +30,11 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static("public"))
 
 app.get("/", async (req, res) => {
-    let neigh = await db.collection("neighborhoods").find().toArray();
+   /* let neigh = await db.collection("neighborhoods").find().toArray();
     let restaurants = await db.collection("restaurants").find().limit(10).toArray();
-    console.log(restaurants)
-    res.render("index", {
-        pageTitle: "Demo",
-        neighborhoods: neigh,
-        restaurants: restaurants
+    console.log(restaurants)*/
+    res.render("index2", {
+        pageTitle: "Demo"
     })
 });
 
